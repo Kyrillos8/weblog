@@ -1,0 +1,35 @@
+{% extends 'posts/layout.html' %}
+{% block content %}
+<!-- NavBar login form -->
+<title>profile</title>
+
+
+  {% if user.is_authenticated %}
+  <h3> Hi, {{user.username}}!</h5>
+
+<br>
+  <h4><small>Your Username : {{user.username}}</small></h4>
+  <!-- <h4><small>Your first name : {{user.first_name}}</small></h4>
+  <h4><small>Your last name : {{user.last_name}}</small></h4> -->
+  <h4><small>Your Email : {{user.email}}</small></h4>
+  <h4><small>Your Password : {{user.password}}</small></h4>
+
+
+
+<!-- 
+  <a href="/change/changepass" ><small>change password.</small></a>
+  <a href="/change/edit_profile" ><small>update profile.</small></a> -->
+
+  {% else %}
+    <h1>login to see your profile</h1>
+    <form action="login" method="POST">
+      {% csrf_token %}
+      <input type="text" placeholder="Username" name="username">
+      <input type="password" placeholder="Password" name="password"><br> 
+      <a href="register" ><small>Not Registered Yet? Create an account.</small></a>
+      <button type="submit">Login</button>
+    </form>
+  {% endif %}
+</body>
+</html>
+{% endblock content %}

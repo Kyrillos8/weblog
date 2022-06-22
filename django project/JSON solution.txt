@@ -1,0 +1,5 @@
+from django.http import JsonResponse
+
+
+context = {"id":3, "name":"amhed"}
+return JsonResponse(context)

@@ -1,0 +1,60 @@
+{% extends 'posts/layout.html' %}
+
+{% block content %}
+<style>
+table {
+  border-collapse: collapse;
+  width: 80%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #DDD;
+}
+
+tr:hover {background-color: #D6EEEE;}
+</style>
+
+{% if user.is_authenticated %}
+  <h5> Welcome, {{user.username}}!</h5>
+
+  {% else %}
+
+<title>register</title>
+
+<center>
+<!--Register--> 
+<div class="container py-5">
+	<h1>Register</h1>
+	<form name="register_form" method="POST">
+		{% csrf_token %}
+			<table>
+		{{ register_form}}  
+
+			</table>			
+			<input type="checkbox" onclick="myFunction()">  Show Password
+
+			<hr>
+		<button class="btn btn-primary" type="submit">Register</button>
+	</form>
+	<p class="text-center">If you already have an account, <a href="/account/login">login</a> instead.</p>
+</div>
+</center>
+
+<script>
+	function myFunction() {
+	  var x = document.getElementById("id_password1");
+	  var y = document.getElementById("id_password2");
+	  if (x.type === "password" && y.type === "password") {
+		x.type = "text";
+		y.type = "text";
+	  } else {
+		x.type = "password";
+		y.type = "password";
+	  }
+	}
+	</script>
+	  {% endif %}
+
+{% endblock %}

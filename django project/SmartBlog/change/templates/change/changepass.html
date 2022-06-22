@@ -1,0 +1,27 @@
+{% extends 'posts/layout.html' %}
+
+{% block content %}
+        <h1>change password</h1>
+
+    <form name="change_pass" method="POST" class="modal-content" action="/account/profile">
+        {% csrf_token %}
+        <div class="container">
+            
+
+            <label for="oldpass"><b>The oldpass</b></label>
+            <input type="password" placeholder="Enter oldpass" id="password" required>
+
+            <label for="newpass"><b>The newpass</b></label>
+            <input type="password" placeholder="Enter newpass" id="password" required>
+
+            <label for="newpassagain"><b>The newpass again</b></label>
+            <input type="password" placeholder="Enter newpass again" id="password" required>
+
+
+            <div class="clearfix">
+                <button type="submit" class="signupbtn">Change</button><hr>
+            </div>
+        </div>
+    </form>
+
+{% endblock content %}
