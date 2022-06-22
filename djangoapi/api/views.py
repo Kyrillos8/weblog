@@ -44,8 +44,8 @@ def arti(request):
     #     url.append(f['url'])
 
     # mylist = zip(news, desc, img, url)
-    country = request.GET('country')
-    category = request.GET.get('category')  
+    country = request.GET.get('country')
+    category = request.GET.get('category')
     if country:
         url = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={API_KEY}'
         response = requests.get(url)
