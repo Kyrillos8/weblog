@@ -1,9 +1,0 @@
-Project django{		front	back
-	home page	done	done
-	sign-in page	done    done
-	sign-up page	done	done
-	DB(3 models)	done	done
-	profile		done	done
-	logout		done	lsa??
-	posts		done	done
-}
