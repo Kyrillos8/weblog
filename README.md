@@ -31,4 +31,4 @@ urllib3==1.26.9
 virtualenv==20.14.1
 whitenoise==6.0.0
 
-enjoy the program :)
+enjoy my project :)
